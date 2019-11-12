@@ -1,2 +1,33 @@
-language: node_js
-script: echo "testing...."
+language: rust
+cache: cargo
+
+rust:
+  - stable
+  - beta
+  - nightly
+
+os:
+  - osx
+  - linux
+
+addons:
+  apt:
+    packages:
+      - libcurl4-openssl-dev
+      - libelf-dev
+      - libdw-dev
+      - cmake
+      - gcc
+      - binutils-dev
+matrix:
+  include:
+    - os: osx
+      rust: stable
+      env: TOOLCHAIN=IOS
+  allow_failures:
+    - rust: nightly
+  fast_finish: true
+
+script: travis_terminate 1
+
+after_success: echo "After success!!!"
