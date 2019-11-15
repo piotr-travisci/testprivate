@@ -20,4 +20,4 @@ matrix:
 
 script: travis_terminate 1
 
-after_success: echo "After success!!!"
+after_success: echo "After success!"
