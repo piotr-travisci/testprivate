@@ -3,8 +3,6 @@ cache: cargo
 
 rust:
   - stable
-  - beta
-  - nightly
 
 os:
   - linux
@@ -14,10 +12,8 @@ addons:
     packages:
       - libcurl4-openssl-dev
 matrix:
-  allow_failures:
-    - rust: nightly
   fast_finish: true
 
 script: travis_terminate 1
 
-after_success: echo "After success!"
+after_success: echo "After success!!!!!"
